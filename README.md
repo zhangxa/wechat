@@ -1,17 +1,17 @@
 # WeChat SDK for Go
 
-![Go](https://github.com/silenceper/wechat/actions/workflows/go.yml/badge.svg?branch=v2)
-[![Go Report Card](https://goreportcard.com/badge/github.com/silenceper/wechat/v2)](https://goreportcard.com/report/github.com/silenceper/wechat/v2)
-[![pkg](https://img.shields.io/badge/dev-reference-007d9c?logo=go&logoColor=white&style=flat)](https://pkg.go.dev/github.com/silenceper/wechat/v2?tab=doc)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/silenceper/wechat?sort=semver)
-![star](https://gitcode.com/silenceper/wechat/star/badge.svg)
+![Go](https://github.com/zhangxa/wechat/actions/workflows/go.yml/badge.svg?branch=v2)
+[![Go Report Card](https://goreportcard.com/badge/github.com/zhangxa/wechat/v2)](https://goreportcard.com/report/github.com/zhangxa/wechat/v2)
+[![pkg](https://img.shields.io/badge/dev-reference-007d9c?logo=go&logoColor=white&style=flat)](https://pkg.go.dev/github.com/zhangxa/wechat/v2?tab=doc)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/zhangxa/wechat?sort=semver)
+![star](https://gitcode.com/zhangxa/wechat/star/badge.svg)
 
 
 使用Golang开发的微信SDK，简单、易用。
 
 ## 文档 && 例子
 
-[API列表](https://github.com/silenceper/wechat/tree/v2/doc/api)
+[API列表](https://github.com/zhangxa/wechat/tree/v2/doc/api)
 
 [Wechat SDK 2.0 文档](https://silenceper.com/wechat)
 
@@ -20,7 +20,7 @@
 ## 快速开始
 
 ```
-import "github.com/silenceper/wechat/v2"
+import "github.com/zhangxa/wechat/v2"
 ```
 
 以下是一个微信公众号处理消息接收以及回复的例子：
@@ -72,7 +72,7 @@ server.Send()
 
 ## 贡献
 
-- 在[API列表](https://github.com/silenceper/wechat/tree/v2/doc/api)中查看哪些API未实现
+- 在[API列表](https://github.com/zhangxa/wechat/tree/v2/doc/api)中查看哪些API未实现
 - 提交issue，描述需要贡献的内容
 - 完成更改后，提交PR
 

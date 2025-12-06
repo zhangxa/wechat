@@ -1,21 +1,21 @@
 package work
 
 import (
-	"github.com/silenceper/wechat/v2/credential"
-	"github.com/silenceper/wechat/v2/work/addresslist"
-	"github.com/silenceper/wechat/v2/work/appchat"
-	"github.com/silenceper/wechat/v2/work/checkin"
-	"github.com/silenceper/wechat/v2/work/config"
-	"github.com/silenceper/wechat/v2/work/context"
-	"github.com/silenceper/wechat/v2/work/externalcontact"
-	"github.com/silenceper/wechat/v2/work/invoice"
-	"github.com/silenceper/wechat/v2/work/jsapi"
-	"github.com/silenceper/wechat/v2/work/kf"
-	"github.com/silenceper/wechat/v2/work/material"
-	"github.com/silenceper/wechat/v2/work/message"
-	"github.com/silenceper/wechat/v2/work/msgaudit"
-	"github.com/silenceper/wechat/v2/work/oauth"
-	"github.com/silenceper/wechat/v2/work/robot"
+	"github.com/zhangxa/wechat/v2/credential"
+	"github.com/zhangxa/wechat/v2/work/addresslist"
+	"github.com/zhangxa/wechat/v2/work/appchat"
+	"github.com/zhangxa/wechat/v2/work/checkin"
+	"github.com/zhangxa/wechat/v2/work/config"
+	"github.com/zhangxa/wechat/v2/work/context"
+	"github.com/zhangxa/wechat/v2/work/externalcontact"
+	"github.com/zhangxa/wechat/v2/work/invoice"
+	"github.com/zhangxa/wechat/v2/work/jsapi"
+	"github.com/zhangxa/wechat/v2/work/kf"
+	"github.com/zhangxa/wechat/v2/work/material"
+	"github.com/zhangxa/wechat/v2/work/message"
+	"github.com/zhangxa/wechat/v2/work/msgaudit"
+	"github.com/zhangxa/wechat/v2/work/oauth"
+	"github.com/zhangxa/wechat/v2/work/robot"
 )
 
 // Work 企业微信
