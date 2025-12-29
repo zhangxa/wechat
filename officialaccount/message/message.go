@@ -175,7 +175,7 @@ type MixMessage struct {
 				Index      uint   `xml:"idx"`         // 文章对应的编号
 				ArticleURL string `xml:"article_url"` // 图文的永久链接
 			} `xml:"item"`
-		} `xml:"article_detail"`          // 当发布状态为 0 时（即成功）时，返回内容
+		} `xml:"article_detail"` // 当发布状态为 0 时（即成功）时，返回内容
 		FailIndex []uint `xml:"fail_idx"` // 当发布状态为 2 或 4 时，返回不通过的文章编号，第一篇为 1；其他发布状态则为空
 	} `xml:"PublishEventInfo"`
 

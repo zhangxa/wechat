@@ -1,7 +1,10 @@
 package notify
 
 import (
+	"encoding/xml"
 	"fmt"
+	"io"
+	"net/http"
 	"reflect"
 	"sort"
 	"strings"
@@ -62,6 +65,39 @@ type PaidResult struct {
 type PaidResp struct {
 	ReturnCode string `xml:"return_code"`
 	ReturnMsg  string `xml:"return_msg"`
+}
+
+func (notify *Notify) SuccessResponse(httpWriter http.ResponseWriter) error {
+	httpWriter.Header().Set("Content-Type", "text/xml")
+	msg := "<xml><return_code><![CDATA[SUCCESS]]></return_code></xml>"
+	_, err := httpWriter.Write([]byte(msg))
+	return err
+}
+
+func (notify *Notify) FailResponse(httpWriter http.ResponseWriter) error {
+	httpWriter.Header().Set("Content-Type", "text/xml")
+	msg := "<xml><return_code><![CDATA[FAIL]]></return_code></xml>"
+	_, err := httpWriter.Write([]byte(msg))
+	return err
+}
+
+// DecryptBody 解密消息
+func (notify *Notify) DecryptBody(httpReq *http.Request) (notifyRes *PaidResult, err error) {
+	// 读取body
+	var bodyBytes []byte
+	bodyBytes, err = io.ReadAll(httpReq.Body)
+	if err != nil {
+		return
+	}
+	err = xml.Unmarshal(bodyBytes, &notifyRes)
+	if err != nil {
+		return
+	}
+	ok := notify.PaidVerifySign(*notifyRes)
+	if !ok {
+		return nil, fmt.Errorf("verify sign failed")
+	}
+	return
 }
 
 // PaidVerifySign 支付成功结果验签
