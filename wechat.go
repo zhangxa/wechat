@@ -5,7 +5,8 @@ import (
 	"os"
 
 	log "github.com/sirupsen/logrus"
-
+	"github.com/zhangxa/wechat/v2/aispeech"
+	aispeechConfig "github.com/zhangxa/wechat/v2/aispeech/config"
 	"github.com/zhangxa/wechat/v2/cache"
 	"github.com/zhangxa/wechat/v2/miniprogram"
 	miniConfig "github.com/zhangxa/wechat/v2/miniprogram/config"
@@ -82,6 +83,14 @@ func (wc *Wechat) GetWork(cfg *workConfig.Config) *work.Work {
 		cfg.Cache = wc.cache
 	}
 	return work.NewWork(cfg)
+}
+
+// GetAISpeech 获取微信智能对话的实例
+func (wc *Wechat) GetAISpeech(cfg *aispeechConfig.Config) *aispeech.AISpeech {
+	if cfg.Cache == nil {
+		cfg.Cache = wc.cache
+	}
+	return aispeech.NewAISpeech(cfg)
 }
 
 // SetHTTPClient  设置HTTPClient

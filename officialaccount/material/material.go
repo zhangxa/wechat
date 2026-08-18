@@ -50,16 +50,15 @@ func NewMaterial(context *context.Context) *Material {
 
 // Article 永久图文素材
 type Article struct {
-	Title            string `json:"title"`
-	ThumbMediaID     string `json:"thumb_media_id"`
-	ThumbURL         string `json:"thumb_url"`
-	Author           string `json:"author"`
-	Digest           string `json:"digest"`
-	ShowCoverPic     int    `json:"show_cover_pic"`
-	Content          string `json:"content"`
-	ContentSourceURL string `json:"content_source_url"`
-	URL              string `json:"url"`
-	DownURL          string `json:"down_url"`
+	Title              string `json:"title"`
+	ThumbMediaID       string `json:"thumb_media_id"`
+	Author             string `json:"author"`
+	Digest             string `json:"digest"`
+	ShowCoverPic       int    `json:"show_cover_pic"`
+	Content            string `json:"content"`
+	ContentSourceURL   string `json:"content_source_url"`
+	NeedOpenComment    int    `json:"need_open_comment"`
+	OnlyFansCanComment int    `json:"only_fans_can_comment"`
 }
 
 // GetNews 获取/下载永久素材
@@ -104,6 +103,12 @@ type resArticles struct {
 
 // AddNews 新增永久图文素材
 func (material *Material) AddNews(articles []*Article) (mediaID string, err error) {
+	if len(articles) == 0 {
+		return "", errors.New("没有要上传的图文")
+	}
+	if len(articles) > 8 {
+		return "", errors.New("最多8篇图文")
+	}
 	req := &reqArticles{articles}
 
 	var accessToken string
